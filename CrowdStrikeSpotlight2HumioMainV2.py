@@ -9,6 +9,7 @@ from CrowdStrikeSpotlight2HumioErrorsV2 import connection_errors
 from Send2HumioHECV2 import send_to_HEC
 
 #python imports
+import os
 import logging
 import sys
 import configparser
@@ -16,10 +17,20 @@ import json
 from datetime import datetime
 
 def main():
-
+    print("Current working directory:", os.getcwd())
     #config pulls    
     config = configparser.ConfigParser()
     config.read('CrowdStrikeSpotlight2HumioConfig.ini')
+    
+    # Print the sections available in the configuration file
+    #print("Sections in the configuration file:", config.sections())
+    
+    # Verify if the "Logging" section is present in the configuration file
+    #if 'Logging' not in config:
+    #    print("Error: 'Logging' section not found in the configuration file.")
+    #    sys.exit()
+
+    #config.read('CrowdStrikeSpotlight2HumioConfig.ini')
     log_config = config['Logging']
     cs_config = config['CrowdStrike']
 
