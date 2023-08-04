@@ -20,15 +20,15 @@ def main():
     print("Current working directory:", os.getcwd())
     #config pulls    
     config = configparser.ConfigParser()
-    config.read('CrowdStrikeSpotlight2HumioConfig.ini')
+    config.read(r'Work\Spotlight\CrowdStrike-Spotlight-Humio-Package-Integration\CrowdStrikeSpotlight2HumioConfig.ini')
     
     # Print the sections available in the configuration file
-    print("Sections in the configuration file:", config.sections())
+    #print("Sections in the configuration file:", config.sections())
     
     # Verify if the "Logging" section is present in the configuration file
-    if 'Logging' not in config:
-        print("Error: 'Logging' section not found in the configuration file.")
-        sys.exit()
+    #if 'Logging' not in config:
+    #    print("Error: 'Logging' section not found in the configuration file.")
+    #    sys.exit()
 
     #config.read('CrowdStrikeSpotlight2HumioConfig.ini')
     log_config = config['Logging']
